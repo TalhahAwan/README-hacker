@@ -44,7 +44,7 @@ const questions = () => {
     },
 
     {
-        type: "choices",
+        type: "list",
         name: "license",
         message: "Please select the license type.",
         choices: [
