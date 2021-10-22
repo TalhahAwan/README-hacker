@@ -38,7 +38,7 @@ function renderLicenseSection(license) {
     
     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.`
 
-  }else if (license === "Mozilla Public License") {
+  } else if (license === "Mozilla Public License") {
     return `## License
     Mozilla Public License Version 2.0
     Definitions
@@ -226,7 +226,7 @@ function renderLicenseSection(license) {
     
     Exhibit B - "Incompatible With Secondary Licenses" Notice
     This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.`
-  }else if (license === "The Unlicense") {
+  } else if (license === "The Unlicense") {
     return `## License
     This is free and unencumbered software released into the public domain.
 
@@ -235,7 +235,7 @@ function renderLicenseSection(license) {
     In jurisdictions that recognize copyright laws, the author or authors of this software dedicate any and all copyright interest in the software to the public domain. We make this dedication for the benefit of the public at large and to the detriment of our heirs and successors. We intend this dedication to be an overt act of relinquishment in perpetuity of all present and future rights to this software under copyright law.
     
     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.`
-  }else {
+  } else {
     console.log("Something went wrong")
   }
 
@@ -246,36 +246,28 @@ function generateMarkdown(data) {
   return `# ${data.title}
 ${renderLicenseBadge(data.license)}
 
-    ## Description
-    ${data.description}
-
-    ## Table of Contents
-
-    - [Installation](#installation)
-    - [Usage Information](#usage)
-    - [Contribution Guidelines](#contribution)
-    - [Test Instructions](#tests)
-    - [Questions](#questions)
-    ${renderLicenseLink(data.license)}
-
-    ## Installation
-    ${data.installation}
-
-    ## Usage
-    ${data.usage}
-
-    ## Contribution
-    ${data.contribution}
-
-    ## Tests
-    ${data.test}
-
-    ## Questions
-    GitHub: [${data.github}](${data.github})
-    Email : [${data.email}](mailto:${data.email})
-
-    ${renderLicenseSection(data.license)}
-    `;
+## Description
+${data.description}
+## Table of Contents
+- [Installation](#installation)
+- [Usage Information](#usage)
+- [Contribution Guidelines](#contribution)
+- [Test Instructions](#tests)
+- [Questions](#questions)
+${renderLicenseLink(data.license)}
+## Installation
+${data.installation}
+## Usage
+${data.usage}
+## Contribution
+${data.contribution}
+## Tests
+${data.test}
+## Questions
+GitHub: [${data.github}](${data.github})
+Email : [${data.email}](mailto:${data.email})
+${renderLicenseSection(data.license)}
+`;
 };
 
 module.exports = generateMarkdown;
