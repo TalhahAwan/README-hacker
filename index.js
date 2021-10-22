@@ -33,7 +33,7 @@ const questions = () => {
     {
         type: "input",
         name: "contribution",
-        message: "Please add guidelines on how people can contribute to your project.",
+        message: "Please add guidelines on how to contribute to your project.",
     },
 
 
