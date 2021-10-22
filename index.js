@@ -7,14 +7,67 @@ const questions = () => {
     return inquirer.prompt([
     {
         type: "input",
-        name: "projectTitle",
+        name: "title",
         message: "What's the title of your project?",
-    }
+    },
 
 
     {
-        
-    }
+        type: "input",
+        name: "description",
+        message: "Please describe your project.",
+    },
+
+    {
+        type: "input",
+        name: "installation",
+        message: "Please provide a step by step description of how to install your project.",
+    },
+
+    {
+        type: "input",
+        name: "usage",
+        message: "Please provide instructions or examples on how to use your project.",
+    },
+
+    {
+        type: "input",
+        name: "contribution",
+        message: "Please add guidelines on how people can contribute to your project.",
+    },
+
+
+    {
+        type: "input",
+        name: "test",
+        message: "Please provide test instructions.",
+    },
+
+    {
+        type: "choices",
+        name: "license",
+        message: "Please select the license type.",
+        choices: [
+            "MIT License", "Mozilla Public License", "The Unlicense", "none"
+        ]
+    },
+
+    {
+        type: "input",
+        name: "github",
+        message: "Please provide your github id.",
+    },
+
+    {
+        type: "input",
+        name: "email",
+        message: "Please provide your email.",
+    },
+
+
+
+
+
     ])
 };
 
