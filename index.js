@@ -64,18 +64,20 @@ const questions = () => {
         message: "Please provide your email.",
     },
 
-
-
-
-
     ])
 };
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+const writeToFile = (data) => {
+    fs.writeFileSync("./dist/README.md", generateMarkdown(data));
+};
 
 // TODO: Create a function to initialize app
-function init() {}
+const init = () => {
+    questions()
+        .then((data) => writeToFile(data))
+        .catch((error) => console.error(error))
+};
 
 // Function call to initialize app
 init();
